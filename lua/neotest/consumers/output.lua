@@ -121,10 +121,12 @@ local init = function()
           and range[1] <= line
           and range[3] >= line
         then
-          open_output(
-            results[pos.id],
-            { short = config.output.open_on_run == "short", enter = false, quiet = true }
-          )
+          open_output(results[pos.id], {
+            short = config.output.open_on_run == "short",
+            quiet = not config.output.open_enter_on_run,
+            enter = config.output.open_enter_on_run,
+            auto_close = true,
+          })
         end
       end
     end

@@ -124,6 +124,7 @@ local js_watch_query = [[
 ---@class neotest.Config.output
 ---@field enabled boolean
 ---@field open_on_run string|boolean Open nearest test result after running
+---@field open_enter_on_run string|boolean Open nearest test result after running
 
 ---@class neotest.Config.state
 ---@field enabled boolean
