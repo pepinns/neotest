@@ -36,6 +36,10 @@ local function set_opts(win, opts)
 end
 
 local function select_win()
+  local success, picker = pcall(require, "window-picker")
+  if success then
+    return picker.pick_window()
+  end
   local windows = vim.tbl_filter(function(win)
     if api.nvim_win_get_config(win).relative ~= "" then
       return false
